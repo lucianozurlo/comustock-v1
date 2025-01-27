@@ -1,0 +1,108 @@
+body.lineamientos {
+    overflow: visible;
+}
+
+.sticky-menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex-grow: 1;
+    z-index: 1;
+}
+
+body.lineamientos .sticky-menu .sidebar {
+    position: sticky;
+    top: 110px;
+}
+
+body.lineamientos.identidad .sticky-menu .sidebar {
+    top: 170px;
+}
+
+.sticky-menu.has-sidebar {
+    flex-direction: row;
+}
+
+.sticky-menu .sidebar {
+    width: 220px;
+    min-width: 220px;
+    transition: width, left, right, 0.3s;
+    overflow-x: hidden !important;
+    position: relative;
+}
+
+.sticky-menu .sidebar .menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.laysticky-menuout .sidebar .menu .menu-item a {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    color: #000;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.sticky-menu .sidebar .menu .submenu-item a {
+    text-transform: unset;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.sticky-menu .sidebar .menu .submenu-item:last-child a {
+    margin-bottom: 0;
+}
+
+.sidebar .sidebar-sticky-menu {
+    padding: 54px 0 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+.sidebar .sidebar-content {
+    padding: 80px 30px 40px 40px;
+}
+
+.sticky-menu .content {
+    flex-grow: 1;
+    padding: 54px 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sticky-menu .content>div {
+    min-height: calc(100vh - 54px);
+}
+
+.sticky-menu .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    display: none;
+}
+
+.sticky-menu.fixed-sidebar {
+    height: 100%;
+}
+
+.sticky-menu.fixed-sidebar .sidebar {
+    height: 100%;
+    overflow: auto;
+}
+
+.sticky-menu.fixed-sidebar .sidebar~.sticky-menu {
+    height: 100%;
+    overflow: auto;
+}
